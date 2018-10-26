@@ -10,6 +10,7 @@ module.exports = {
 				exclude: path.join(__dirname, 'node_modules'),
 				loader: 'babel-loader',
 				options: {
+					babelrc: false,
 					presets: [
 						['@babel/preset-env', { loose: true, modules: false, useBuiltIns: 'entry' }],
 						'@babel/preset-react',
