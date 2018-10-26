@@ -16,10 +16,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jessy1092/react-redux-hook.git"
+    "url": "git@github.com:jessy1092/react-redux-hook.git"
   },
   "bugs": {
-    "url": "https://github.com/jessy1092/react-redux-hook"
+    "url": "https://github.com/jessy1092/react-redux-hook/issues"
   },
   "license": "MIT",
   "main": "dist/index.js",
