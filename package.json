@@ -1,5 +1,5 @@
 {
-  "name": "react-redux-hook",
+  "name": "react-redux-hooks",
   "description": "The easiest way to connect redux. Power by react hooks",
   "version": "0.1.0",
   "keywords": [
@@ -16,10 +16,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:jessy1092/react-redux-hook.git"
+    "url": "git@github.com:jessy1092/react-redux-hooks.git"
   },
   "bugs": {
-    "url": "https://github.com/jessy1092/react-redux-hook/issues"
+    "url": "https://github.com/jessy1092/react-redux-hooks/issues"
   },
   "license": "MIT",
 	"main": "dist/index.js",
