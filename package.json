@@ -34,7 +34,8 @@
     "build:storybook": "build-storybook -c storybook -o _public/storybook",
     "test": "jest --coverage",
     "commit": "git-cz",
-    "release": "standard-version",
+		"release": "standard-version",
+		"prepublish": "yarn build && yarn build:es",
     "format": "prettier --config ./.prettierrc --write \"./{,**/}/*.{js,css,json}\" && eslint --fix ."
   },
   "engines": {

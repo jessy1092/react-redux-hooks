@@ -1,0 +1,13 @@
+# node
+node_modules/
+
+# Else
+.editorconfig
+.travis.yml
+.eslintrc
+.eslintignore
+.prettierignore
+.prettierrc
+.travis.yml
+*.log
+coverage/
