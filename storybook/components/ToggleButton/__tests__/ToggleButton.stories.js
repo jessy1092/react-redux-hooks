@@ -12,7 +12,7 @@ const stories = storiesOf('ToggleButton', module);
 stories.addDecorator(withKnobs);
 
 const store = createStore((state = { toggle: false }, action) => {
-	if (action.type === 'TOOGLE') {
+	if (action.type === 'TOGGLE') {
 		return { toggle: !state.toggle };
 	}
 

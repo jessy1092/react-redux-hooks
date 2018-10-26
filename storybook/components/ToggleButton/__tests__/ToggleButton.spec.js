@@ -8,7 +8,7 @@ import ToggleButton from '../index.js';
 
 test('should have default value: Click to open', () => {
 	const store = createStore((state = { toggle: false }, action) => {
-		if (action.type === 'TOOGLE') {
+		if (action.type === 'TOGGLE') {
 			return { toggle: !state.toggle };
 		}
 
@@ -26,7 +26,7 @@ test('should have default value: Click to open', () => {
 // Create custom snapshot testing
 test('should become "Click to close" after click', () => {
 	const store = createStore((state = { toggle: false }, action) => {
-		if (action.type === 'TOOGLE') {
+		if (action.type === 'TOGGLE') {
 			return { toggle: !state.toggle };
 		}
 
