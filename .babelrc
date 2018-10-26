@@ -1,18 +1,42 @@
 {
-	"presets": [
-		[
-			"@babel/preset-env",
-			{
-				"loose": true,
-				"useBuiltIns": "entry"
-			}
-		],
-		"@babel/preset-react"
-	],
-	"plugins": [
-		"@babel/plugin-syntax-dynamic-import",
-		"@babel/plugin-syntax-import-meta",
-		"@babel/plugin-proposal-class-properties",
-		"@babel/plugin-proposal-json-strings"
-	]
+	"env": {
+    "es": {
+			"presets": [
+				[
+					"@babel/preset-env",
+					{
+						"loose": true,
+						"useBuiltIns": "entry",
+						"modules": false
+					}
+				],
+				"@babel/preset-react"
+			],
+			"plugins": [
+				"@babel/plugin-syntax-dynamic-import",
+				"@babel/plugin-syntax-import-meta",
+				"@babel/plugin-proposal-class-properties",
+				"@babel/plugin-proposal-json-strings"
+			]
+    },
+    "cjs": {
+			"presets": [
+				[
+					"@babel/preset-env",
+					{
+						"loose": true,
+						"useBuiltIns": "entry",
+						"modules": "commonjs"
+					}
+				],
+				"@babel/preset-react"
+			],
+			"plugins": [
+				"@babel/plugin-syntax-dynamic-import",
+				"@babel/plugin-syntax-import-meta",
+				"@babel/plugin-proposal-class-properties",
+				"@babel/plugin-proposal-json-strings"
+			]
+    }
+  }
 }

@@ -22,10 +22,13 @@
     "url": "https://github.com/jessy1092/react-redux-hook/issues"
   },
   "license": "MIT",
-  "main": "dist/index.js",
+	"main": "dist/index.js",
+	"module": "dist-es/index.js",
+  "jsnext:main": "dist-es/index.js",
   "scripts": {
     "start": "npm run storybook",
-    "build": "babel src -d dist",
+    "build": "cross-env BABEL_ENV=cjs babel src -d dist",
+    "build:es": "cross-env BABEL_ENV=es babel src -d dist-es",
     "lint": "eslint . && stylelint .",
     "storybook": "start-storybook -p 8000 -c storybook",
     "build:storybook": "build-storybook -c storybook -o _public/storybook",
