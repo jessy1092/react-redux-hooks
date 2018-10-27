@@ -1,11 +1,25 @@
 react-redux-hooks
 =====
 
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/) [![Standard Version](https://img.shields.io/badge/release-standard%20version-brightgreen.svg?style=flat-square)](https://github.com/conventional-changelog/standard-version)
+[![Commitizen friendly][commitizen-image]][commitizen-image] [![Standard Version][standard-version-image]][standard-version-url] [![npm][npm-image]][npm-url] [![Dependency Status][david-dm-image]][david-dm-url]
 
 The easiest way to connect redux. Power by [react hooks](https://reactjs.org/docs/hooks-intro.html).
 
 ## Getting Started
+
+### Install
+
+```
+npm install react-redux-hooks
+```
+
+or
+
+```
+yarn add react-redux-hooks
+```
+
+### Usage
 
 #### Connect to redux in component
 
@@ -50,3 +64,63 @@ ReactDOM.render(
 );
 
 ```
+
+## Roadmap
+
+- Shallow compare
+- Customize Selector
+
+Discussion welcome to [open issue](https://github.com/jessy1092/react-redux-hooks/issues)
+
+
+## Release Notes
+
+see [CHANGELOG.md](https://github.com/jessy1092/react-redux-hooks/blob/master/CHANGELOG.md)
+
+
+## Contribute
+[![devDependency Status][david-dm-dev-image]][david-dm-dev-url]
+
+1. Fork it.
+2. Create your feature-branch `git checkout -b your-new-feature-branch`
+3. Commit your change `git commit -am 'Add new feature'`
+4. Push to the branch `git push origin your-new-feature-branch`
+5. Create new Pull Request with `master` branch
+
+## License
+
+The MIT License (MIT)
+
+Copyright (c) 2018 Lee  < jessy1092@gmail.com >
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+[commitizen-image]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square
+[commitizen-url]: http://commitizen.github.io/cz-cli/
+
+[standard-version-image]: https://img.shields.io/badge/release-standard%20version-brightgreen.svg?style=flat-square
+[standard-version-url]: https://github.com/conventional-changelog/standard-version
+
+[npm-image]: https://img.shields.io/npm/v/react-redux-hooks.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/react-redux-hooks
+
+[david-dm-image]: https://david-dm.org/jessy1092/react-redux-hooks.svg?style=flat-square
+[david-dm-url]: https://david-dm.org/jessy1092/react-redux-hooks
+
+[david-dm-dev-image]: https://david-dm.org/jessy1092/react-redux-hooks/dev-status.svg?style=flat-square
+[david-dm-dev-url]: https://david-dm.org/jessy1092/react-redux-hooks#info=devDependencies
