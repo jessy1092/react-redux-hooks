@@ -7,8 +7,8 @@ export const Provider = ({ store, children }) => (
 );
 
 export const useRedux = () => {
-	const [state, setState] = useState({});
 	const context = useContext(ReduxContext);
+	const [state, setState] = useState(context.getState());
 
 	function handleChange() {
 		setState(context.getState());
