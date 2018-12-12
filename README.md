@@ -21,7 +21,7 @@ yarn add react-redux-hooks
 
 ### Usage
 
-[See full examples](https://github.com/jessy1092/react-redux-hooks/tree/master/storybook/components)
+[See full examples](https://github.com/jessy1092/react-redux-hooks/tree/master/storybook/examples)
 
 #### Connect to redux in component
 
