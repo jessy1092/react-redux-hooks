@@ -31,6 +31,7 @@
 		"no-mixed-operators": ["error", { "allowSamePrecedence": true }],
 		"function-paren-newline": ["error", "consistent"],
 		"object-curly-newline": ["error", { "consistent": true }],
+		"no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "_" }],
 		"react/jsx-indent": [2, "tab"],
 		"react/jsx-indent-props": [2, "tab"],
 		"react/prop-types": 0,
