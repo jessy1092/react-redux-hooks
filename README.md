@@ -89,6 +89,10 @@ see [CHANGELOG.md](https://github.com/jessy1092/react-redux-hooks/blob/master/CH
 4. Push to the branch `git push origin your-new-feature-branch`
 5. Create new Pull Request with `master` branch
 
+### Commit Message Style
+
+Please following [angular format](https://github.com/ajoslin/conventional-changelog/blob/master/conventions/angular.md).
+
 ## License
 
 The MIT License (MIT)
