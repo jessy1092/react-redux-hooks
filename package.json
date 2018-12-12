@@ -1,7 +1,7 @@
 {
   "name": "react-redux-hooks",
   "description": "The easiest way to connect redux. Power by react hooks",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "keywords": [
     "react",
     "redux",
@@ -22,8 +22,8 @@
     "url": "https://github.com/jessy1092/react-redux-hooks/issues"
   },
   "license": "MIT",
-	"main": "dist/index.js",
-	"module": "dist-es/index.js",
+  "main": "dist/index.js",
+  "module": "dist-es/index.js",
   "jsnext:main": "dist-es/index.js",
   "scripts": {
     "start": "npm run storybook",
@@ -104,9 +104,9 @@
     ],
     "testMatch": [
       "**/src/**/*.stories.js",
-    	"**/src/**/*.spec.js",
-    	"**/storybook/**/*.spec.js",
-    	"**/storybook/**/*.spec.js"
+      "**/src/**/*.spec.js",
+      "**/storybook/**/*.spec.js",
+      "**/storybook/**/*.spec.js"
     ],
     "automock": false,
     "globals": {
