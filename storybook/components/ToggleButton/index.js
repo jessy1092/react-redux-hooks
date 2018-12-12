@@ -1,6 +1,15 @@
 import React from 'react';
+import { createStore } from 'redux';
 
-import { useRedux } from '../../../src';
+import { Provider, useRedux } from '../../../src';
+
+const store = createStore((state = { toggle: false }, action) => {
+	if (action.type === 'TOGGLE') {
+		return { toggle: !state.toggle };
+	}
+
+	return state;
+});
 
 const ToggleButton = () => {
 	const [state, dispatch] = useRedux();
@@ -12,4 +21,10 @@ const ToggleButton = () => {
 	);
 };
 
-export default ToggleButton;
+const RootComponent = () => (
+	<Provider store={store}>
+		<ToggleButton />
+	</Provider>
+);
+
+export default RootComponent;

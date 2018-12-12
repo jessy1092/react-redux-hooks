@@ -21,6 +21,8 @@ yarn add react-redux-hooks
 
 ### Usage
 
+[See full examples](https://github.com/jessy1092/react-redux-hooks/tree/master/storybook/components)
+
 #### Connect to redux in component
 
 Just use `useRedux`. It would return `state` and `dispatch`

@@ -1,23 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should become "Click to close" after click 1`] = `
-<Provider
-  store={
-    Object {
-      "dispatch": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-      Symbol(observable): [Function],
+<RootComponent>
+  <Provider
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
     }
-  }
->
-  <ToggleButton>
-    <button
-      onClick={[Function]}
-    >
-      Click to open
-    </button>
-  </ToggleButton>
-</Provider>
+  >
+    <ToggleButton>
+      <button
+        onClick={[Function]}
+      >
+        Click to open
+      </button>
+    </ToggleButton>
+  </Provider>
+</RootComponent>
 `;
