@@ -67,10 +67,83 @@ ReactDOM.render(
 
 ```
 
+### Advanced usage
+
+Just like [react-redux](https://react-redux.js.org). We combine Selector, and actions creator in react-redux-hooks
+
+
+#### Define `mapStateToHook`
+
+Just like [mapStateToProps](https://react-redux.js.org/using-react-redux/connect-mapstate).
+
+`mapStateToHook` should be defined as a function:
+
+```javascript
+function mapStateToHook(state)
+```
+
+Arguments
+- `state` is the `store.getState()` return value
+
+Return
+- Must return plain object
+
+Example:
+
+```javascript
+const mapStateToHook = (state) => state.toggle;
+
+const [toggle, dispatch] = useRedux(mapStateToHook);
+```
+
+#### Define `mapDispatchToHook`
+
+Just like [mapDispatchToProps](https://react-redux.js.org/using-react-redux/connect-mapdispatch).
+
+`mapDispatchToHook` Could defined as the three types:
+- `undefined` would return `dispatch` on hook by default
+- `function` would pass `dispatch` as the function parameter for user customize
+- `object` would combine [redux's bindActionCreators](https://redux.js.org/api/bindactioncreators) by default
+
+##### Define `mapDispatchToHook` as the `undefined`
+
+Return `dispatch` on hook by default.
+
+Example:
+```javascript
+const [, dispatch] = useRedux();
+```
+
+##### Define `mapDispatchToHook` as the `function`
+
+Pass `dispatch` as the function parameter for user customize.
+
+Example:
+```javascript
+const mapDispatchToHook = (dispatch) =>  dispatch({ type: 'TOGGLE' });
+
+const [, onToggle] = useRedux(undefined, mapDispatchToHook);
+```
+
+##### Define `mapDispatchToHook` as the `object`
+
+Combine [redux's bindActionCreators](https://redux.js.org/api/bindactioncreators) by default
+
+Example:
+```javascript
+const onToggleAction = () => ({ type: 'TOGGLE' });
+
+const mapDispatchToHook = { onToggle: onToggleAction };
+
+const [, onToggle] = useRedux(undefined, mapDispatchToHook);
+```
+
+[More example](https://github.com/jessy1092/react-redux-hooks/blob/master/storybook/examples/TodoList/containers/AddTodo.js)
+
 ## Roadmap
 
-- Shallow compare
-- Customize Selector
+- [ ] Shallow compare
+- [x] Customize Selector
 
 Discussion welcome to [open issue](https://github.com/jessy1092/react-redux-hooks/issues)
 

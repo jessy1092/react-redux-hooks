@@ -6,8 +6,8 @@ import { toggleTodo, VisibilityFilters } from '../actions';
 
 import Todo from '../components/Todo';
 
-const getVisibleTodos = (todos, filter) => {
-	switch (filter) {
+const getVisibleTodos = ({ todos, visibilityFilter }) => {
+	switch (visibilityFilter) {
 		case VisibilityFilters.SHOW_ALL:
 			return todos;
 		case VisibilityFilters.SHOW_COMPLETED:
@@ -15,19 +15,19 @@ const getVisibleTodos = (todos, filter) => {
 		case VisibilityFilters.SHOW_ACTIVE:
 			return todos.filter(t => !t.completed);
 		default:
-			throw new Error(`Unknown filter: ${filter}`);
+			throw new Error(`Unknown filter: ${visibilityFilter}`);
 	}
 };
 
-const TodoList = () => {
-	const [state, dispatch] = useRedux();
+const useTodoList = () => useRedux(getVisibleTodos, { toggleTodo });
 
-	const todos = getVisibleTodos(state.todos, state.visibilityFilter);
+const TodoList = () => {
+	const [todos, actions] = useTodoList();
 
 	return (
 		<ul>
 			{todos.map(todo => (
-				<Todo key={todo.id} {...todo} onClick={() => dispatch(toggleTodo(todo.id))} />
+				<Todo key={todo.id} {...todo} onClick={() => actions.toggleTodo(todo.id)} />
 			))}
 		</ul>
 	);
