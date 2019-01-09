@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { setVisibilityFilter } from '../actions';
+import * as actionCreators from '../actions';
 import { useRedux } from '../../../../src';
 
-const Link = ({ filter, children }) => {
-	const [state, dispatch] = useRedux();
+const useFilterLink = filter =>
+	useRedux(({ visibilityFilter }) => visibilityFilter === filter, actionCreators);
 
-	const active = state.visibilityFilter === filter;
+const Link = ({ filter, children }) => {
+	const [active, { setVisibilityFilter }] = useFilterLink(filter);
 
 	return (
 		<button
-			onClick={() => dispatch(setVisibilityFilter(filter))}
+			onClick={() => setVisibilityFilter(filter)}
 			disabled={active}
 			style={{
 				marginLeft: '4px',

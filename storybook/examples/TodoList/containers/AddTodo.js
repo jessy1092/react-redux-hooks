@@ -1,10 +1,12 @@
 import React from 'react';
-import { addTodo } from '../actions';
+import * as actionCreators from '../actions';
 
 import { useRedux } from '../../../../src';
 
+const useAddTodoAction = () => useRedux(undefined, actionCreators);
+
 const AddTodo = () => {
-	const [_, dispatch] = useRedux();
+	const [, { addTodo }] = useAddTodoAction();
 
 	let input;
 
@@ -16,7 +18,7 @@ const AddTodo = () => {
 					if (!input.value.trim()) {
 						return;
 					}
-					dispatch(addTodo(input.value));
+					addTodo(input.value);
 					input.value = '';
 				}}
 			>
