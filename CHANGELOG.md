@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/jessy1092/react-redux-hooks/compare/v0.2.0...v0.3.0) (2019-02-10)
+
+
+### Bug Fixes
+
+* Add pure and shouldHooksUpdate options for performance and customize. issue [#2](https://github.com/jessy1092/react-redux-hooks/issues/2) ([ae9ea9f](https://github.com/jessy1092/react-redux-hooks/commit/ae9ea9f))
+* Update the peerDependencies to support react 16.8.0 for hooks official release ([02d8978](https://github.com/jessy1092/react-redux-hooks/commit/02d8978))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/jessy1092/react-redux-hooks/compare/v0.1.1...v0.2.0) (2019-01-09)
 
