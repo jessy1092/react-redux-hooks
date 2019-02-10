@@ -19,7 +19,7 @@ const getVisibleTodos = ({ todos, visibilityFilter }) => {
 	}
 };
 
-const useTodoList = () => useRedux(getVisibleTodos, { toggleTodo });
+const useTodoList = () => useRedux(getVisibleTodos, { toggleTodo }, { pure: true });
 
 const TodoList = () => {
 	const [todos, actions] = useTodoList();

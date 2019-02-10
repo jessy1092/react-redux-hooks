@@ -72,6 +72,17 @@ ReactDOM.render(
 Just like [react-redux](https://react-redux.js.org). We combine Selector, and actions creator in react-redux-hooks
 
 
+```javascript
+function useRedux(mapStateToHook?, mapDispatchToHook?, options?)
+```
+
+useRedux accepts three different parameters, all optional. By convention, they are called:
+
+- mapStateToHook?: Function
+- mapDispatchToHook?: Function | Object
+- options?: Object
+
+
 #### Define `mapStateToHook`
 
 Just like [mapStateToProps](https://react-redux.js.org/using-react-redux/connect-mapstate).
@@ -140,9 +151,24 @@ const [, onToggle] = useRedux(undefined, mapDispatchToHook);
 
 [More example](https://github.com/jessy1092/react-redux-hooks/blob/master/storybook/examples/TodoList/containers/AddTodo.js)
 
+
+#### Define `options` as the `object`
+
+There are two options can be set:
+
+```
+{
+  pure?: boolean,
+  shouldHooksUpdate?: function
+}
+```
+
+- `pure`: When `pure` is `true`, `useRedux` performs several equality checks that are used to avoid unnecessary calls to change state, and ultimately to render. It uses [shallowEqual](https://github.com/jessy1092/react-redux-hooks/blob/master/src/shallowEqual.js) to compare state/prevState. When `pure` is `false`, update state everytime or update state on `shouldHooksUpdate` return `true`.
+- `shouldHooksUpdate: (nextState, prevState) => boolean`: You could customize update function. It only works on `pure` is `false`.
+
 ## Roadmap
 
-- [ ] Shallow compare
+- [x] Shallow compare
 - [x] Customize Selector
 
 Discussion welcome to [open issue](https://github.com/jessy1092/react-redux-hooks/issues)
