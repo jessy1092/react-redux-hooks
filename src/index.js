@@ -15,7 +15,8 @@ export const useReduxCore = () => {
 		setState(context.getState());
 	}
 
-	useEffect(() => context.subscribe(handleChange), [state]);
+	// Only subscribe on mount, unsubscribe on unmount
+	useEffect(() => context.subscribe(handleChange), []);
 
 	return [state, context.dispatch];
 };
