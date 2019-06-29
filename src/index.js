@@ -1,5 +1,5 @@
 import { bindActionCreators } from 'redux';
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState, useRef } from 'react';
 import shallowEqual from './shallowEqual';
 
 export const ReduxContext = createContext({});
@@ -8,29 +8,59 @@ export const Provider = ({ store, children }) => (
 	<ReduxContext.Provider value={store}>{children}</ReduxContext.Provider>
 );
 
-export const useReduxCore = (selector, { pure = false, shouldHooksUpdate }) => {
-	const context = useContext(ReduxContext);
-	const [state, setState] = useState(selector(context.getState()));
+export const useReduxCore = (selector, { shouldHooksUpdate }) => {
+	const store = useContext(ReduxContext);
+	const runGetState = () => selector(store.getState());
+
+	const [state, setState] = useState(runGetState);
+
+	const lastStore = useRef(store);
+	const lastSelector = useRef(selector);
+	const lastUpdateState = useRef(state);
 
 	function handleChange() {
-		const updateState = selector(context.getState());
+		const updateState = runGetState();
 
-		// if shouldHooksUpdate not set and pure is false, update state every time
-		let shouldUpdate =
-			typeof shouldHooksUpdate === 'function' ? shouldHooksUpdate(updateState, state) : true;
-
-		if (pure) {
-			shouldUpdate = !shallowEqual(updateState, state);
-		}
+		// Can custom setup shallowEqual method on shouldHooksUpdate
+		const shouldUpdate =
+			typeof shouldHooksUpdate === 'function'
+				? shouldHooksUpdate(updateState, lastUpdateState.current)
+				: !shallowEqual(updateState, lastUpdateState.current);
 
 		if (shouldUpdate) {
 			setState(updateState);
+			lastUpdateState.current = updateState;
 		}
 	}
 
-	useEffect(() => context.subscribe(handleChange), [state]);
+	if (lastStore.current !== store || lastSelector.current !== selector) {
+		lastStore.current = store;
+		lastSelector.current = selector;
 
-	return [state, context.dispatch];
+		handleChange();
+	}
+
+	useEffect(() => {
+		let didUnsubscribe = false;
+
+		const checkForUpdates = () => {
+			if (didUnsubscribe) {
+				return;
+			}
+
+			handleChange();
+		};
+
+		checkForUpdates();
+
+		const unsubscribe = store.subscribe(checkForUpdates);
+		return () => {
+			didUnsubscribe = true;
+			unsubscribe();
+		};
+	}, [store, selector]);
+
+	return [state, store.dispatch];
 };
 
 const defaultSelector = state => state;
