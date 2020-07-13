@@ -90,7 +90,7 @@
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-mock-store": "^1.4.0",
-    "standard-version": "^4.3.0",
+    "standard-version": "^8.0.1",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-middleware": "^3.2.0",
